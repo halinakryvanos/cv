@@ -2153,7 +2153,7 @@ body.modal{
 	.edina_tm_contact .mainpart{flex-direction: column;align-items: baseline;}
 	.edina_tm_contact .mainpart .left{width: 100%;margin-right: 0px;margin-bottom: 50px;}
 	.edina_tm_contact .right{width: 100%;margin-left: 0px;}
-	.edina_tm_modalbox.opened .box_inner{width: 700px;}
+	.edina_tm_modalbox.opened .box_inner{width: 90%;}
 	.edina_tm_modalbox .close{margin-left: -23px;top: -38px;}
 	.edina_tm_modalbox .close .svg{width: 25px;height: 25px;}
 	.edina_tm_modalbox .description_wrap{padding: 30px;}
