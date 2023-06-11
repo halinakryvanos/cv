@@ -2006,10 +2006,12 @@
                                                    remove that column, but I prefer not to remove the data as it doesn't interfere with my analysis.
                                                    The Gender column is in binary numbers as it comes in two types, but I'll leave it the same to make
                                                    my analysis easier.</p>  
-                            <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD','Spending Score (1-100)':'Spending_Score' },
-          inplace = True)
-
-df.head()</pre> 
+                           <div style="width:200px;overflow:auto">
+                               <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD','Spending Score (1-100)':'Spending_Score'
+                               },
+                                    inplace = True)
+                             df.head()</pre>
+                               </div>
                                                  <div class="image_">
                                                         <img src="img/news/annual income.png" alt="" class="center" />
                                                     </div>
