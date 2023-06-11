@@ -2001,9 +2001,23 @@
                                                  <div class="image_">
                                                         <img src="img/news/load.png" alt="" class="center" />
                                                     </div>
+                                               <p>We have 5 variables "CustomerID", "Gender", "Age", "Annual Income (K$)" and "Spending Score".
+                                                   Of these, "CustomerID" is an indexing variable and doesn't say much about the data, so I could 
+                                                   remove that column, but I prefer not to remove the data as it doesn't interfere with my analysis.
+                                                   The Gender column is in binary numbers as it comes in two types, but I'll leave it the same to make
+                                                   my analysis easier.</p>  
+                            <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD','Spending Score (1-100)':'Spending_Score' },
+          inplace = True)
+
+df.head()</pre> 
+                                                 <div class="image_">
+                                                        <img src="img/news/annual income.png" alt="" class="center" />
+                                                    </div>
+                                                 <p>Now it looks better. Let’s see about the data more:</p> 
+                                                 <div class="image_">
+                                                        <img src="img/news/describe.png" alt="" class="center" />
+                                                    </div>
                                                 
-                 
-                                               
                                                 
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>      
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>
