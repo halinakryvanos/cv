@@ -2008,11 +2008,14 @@
                                                    remove that column, but I prefer not to remove the data as it doesn't interfere with my analysis.
                                                    The Gender column is in binary numbers as it comes in two types, but I'll leave it the same to make
                                                    my analysis easier.</p>  
-                                                <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD','Spending Score (1-100)':'Spending_Score' },
+                                                <div>
+                                            <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD',
+'Spending Score (1-100)':'Spending_Score' },
     inplace = True)
-df.head()</pre>
-
-                                              <div class="image_">
+df.head()
+</pre>
+                                                </div> 
+                                                <div class="image_">
                                                         <img src="img/news/annual income.png" alt="" class="center" />
                                                     </div>
                                                  <p>Now it looks better. Let’s see about the data more:</p> 
@@ -2069,10 +2072,73 @@ for i in columns:
                                                     </div>
                                         <p>I have tried a similar approach for plotting the “KDE” plot where we will investigate 
                                             these three variables with respect to “Gender”.</p>
-                                          
-                                                 
-                                                 
-                                        
+                                                  <div>
+                                                 <pre>for i in columns:
+ plt.figure()
+ sns.kdeplot(df[i],shade=True,hue=df['Gender']);</pre>
+                                                       </div>
+                                                  <div class="image_">
+                                                        <img src="img/news/plot6.png" alt="" class="center" />
+                                                    </div>
+                                                  <p>This plot shows that between 20 to 60 years of age, most of the observations 
+                                                      are of females, which could be kept in mind while targeting the audiences.</p> 
+                                                 <div class="image_">
+                                                        <img src="img/news/plot7.png" alt="" class="center" />
+                                                    </div>
+                                                  <div class="image_">
+                                                        <img src="img/news/plot7.png" alt="" class="center" />
+                                                    </div>
+                                                  <div class="description">
+                                                    <h3>Bivariate Analysis</h3>
+                                                    </p>
+                                                </div>
+                                          <p>Let's display the attributes against each other to show the relevance and dependence of one variable on another.</p>
+                                          <div class="image_">
+                                                        <img src="img/news/scatterplot1.png" alt="" class="center" />
+                                                    </div>
+                                          <p>From these points I can differentiate a few clusters. A portion of observations with low income but a high spending score,
+                                              and a portion of observations with a high cost estimate and high income.</p>
+                                          <p>Let’s see how look data visually in pairs with respect to gender.</p>
+                                          <pre>x=df.copy()
+y=x.drop('CustomerID',axis=1)
+sns.pairplot(y, hue='Gender');</pre>
+                                    <div class="image_">
+                                                        <img src="img/news/scatterplot2.png" alt="" class="center" />
+                                                    </div>
+                                          <p>Here I see something interesting, it seems to me the data evenly distributed across both genders, 
+                                              let's look at it numerically:</p>
+                                          <div class="image_">
+                                                        <img src="img/news/groupby.png" alt="" class="center" />
+                                                    </div>
+                                          <p>Isn’t much difference by gender.</p>
+                                          <p>What says heatmap:<p/>
+                                           <pre>sns.heatmap(y.corr(),annot=True);</pre>
+                                          <div class="image_">
+                                                        <img src="img/news/heatmap.png" alt="" class="center" />
+                                                    </div>
+                                         <p>I get an interesting relation that as age increases there is a decrement in
+                                             spending score so we can also keep that in mind when targeting audiences.</p>
+                                           </div>
+                                                  <div class="description">
+                                                    <h3>Clustering</h3>
+                                                    </p>
+                                                </div>
+                                       <h3>KMeans Algorithm</h3>
+                                        <p>Let’s get into KMean clustering straightaway:</p>
+                                        </div>
+                                                  <div class="description">
+                                                    <h3>Univariate Clustering</h3>
+                                                    </p>
+                                    </div>
+                                    <pre>clustering1= KMeans()
+a=df.copy()
+a=a.drop(df.columns[1], axis = 1)
+a.head()</pre>
+                                   <div class="image_">
+                                                     <img src="img/news/customer.png" alt="" class="center" />
+</div>
+
+   
                                         <div class="image_">
                                                         <img src="img/news/4-1.jpg" alt="" class="center" />
                                                     </div>
@@ -2081,7 +2147,7 @@ for i in columns:
                                                 
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>      
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>      
-                                                    
+                                                   
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>
                                                 <p>Have You ever tried to choose a movie for yourself or for someone else?</p>
                                                 <div class="description">
