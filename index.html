@@ -2026,43 +2026,47 @@
                                                 </div>
                                                 <p>We have analyzed the data numerically, but now let's dive into the graphical interpretation of the data.</p>      
                                                 
-                                            
-                                            
-                                            <p>Have You ever tried to choose a movie for yourself or for someone else?</p>
-                                                <p>Have You ever tried to choose a movie for yourself or for someone else?</p>      
-                                                <p>Have You ever tried to choose a movie for yourself or for someone else?</p>
                                                 <div class="description">
                                                     <h3>Univariate Analysis</h3>
                                                     </p>
                                                 </div>
                                              <p>This means that we will display quantitative variables depending on their occurrence (density).</p>     
-                                                 <div class="image_">
+                                        <div>       
+                                        <div class="image_">
                                                         <img src="img/news/pot1.png" alt="" class="center" />
                                                     </div>
                                         <p>This observations show us “Annual Income” around 50 and 75 thousand US dollars.</p>
                                          <p>Let’s try use plot a histogram:</p>
-                                        <div class="image_">
+                                      <div>
+                                            <div class="image_">
                                                         <img src="img/news/plot2.png" alt="" class="center" />
                                                     </div>
                                         <p>Better to understand that the most abundant observed Annual Income is in the 60s range followed by the 80s range.</p>
                                         <p>If I believe there are three columns that need to be plotted, so instead of writing code for each of them individually, 
                                             I tried to use that together with a for loop like this:</p>
-                                        <pre>columns=['Age', 'Annual_Income_inThousandUSD','Spending_Score']
+                                      
+                                         <div class="quotebox"> <pre>columns=['Age', 'Annual_Income_inThousandUSD','Spending_Score']
 for i in columns:
  plt.figure()
  sns.distplot(df[i])
  plt.savefig('viz3') </pre>
+                                               </div>
+                                          
                                          <div class="image_">
                                                         <img src="img/news/plot 3.png" alt="" class="center" />
                                                     </div>
                                         <div class="image_">
                                                         <img src="img/news/plot4.png" alt="" class="center" />
                                                     </div>
-                                             </div>
+                                             <div>
                                         <div class="image_">
                                                         <img src="img/news/plot5.png" alt="" class="center" />
                                                     </div>
-                                        
+                                        <p>I have tried a similar approach for plotting the “KDE” plot where we will investigate 
+                                            these three variables with respect to “Gender”.</p>
+                                          
+                                                 
+                                                 
                                         
                                         <div class="image_">
                                                         <img src="img/news/4-1.jpg" alt="" class="center" />
