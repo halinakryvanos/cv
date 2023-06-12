@@ -2213,9 +2213,11 @@ print(score)
                                                  </div>
                                                   <div class="description">
                                                     <h3>Bivariate Clustering</h3>
+                                                   </p>
                                                 </div>
                                         <p>Moving forward from univariate clustering now I would be clustering “Annual Income” 
                                           with “Spending Score” as well, here’s how I have done it.</p>
+                                         </p>
                                         <pre>clustering2=KMeans(5)
 clustering2.fit(a[['Annual_Income_inThousandUSD','Spending_Score']])
 clusters["cluster_pred2"]=clustering2.labels_
