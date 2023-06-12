@@ -2008,6 +2008,10 @@
                                                    remove that column, but I prefer not to remove the data as it doesn't interfere with my analysis.
                                                    The Gender column is in binary numbers as it comes in two types, but I'll leave it the same to make
                                                    my analysis easier.</p>  
+                                                <pre>df.rename(columns = {'Annual Income (k$)':'Annual_Income_inThousandUSD','Spending Score (1-100)':'Spending_Score' },
+    inplace = True)
+df.head()</pre>
+
                                               <div class="image_">
                                                         <img src="img/news/annual income.png" alt="" class="center" />
                                                     </div>
@@ -2045,7 +2049,8 @@
                                         <p>If I believe there are three columns that need to be plotted, so instead of writing code for each of them individually, 
                                             I tried to use that together with a for loop like this:</p>
                                       
-                                         <div class="quotebox"> <pre>columns=['Age', 'Annual_Income_inThousandUSD','Spending_Score']
+                                         <div class="quotebox">
+                                             <pre>columns=['Age', 'Annual_Income_inThousandUSD','Spending_Score']
 for i in columns:
  plt.figure()
  sns.distplot(df[i])
