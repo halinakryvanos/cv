@@ -2189,9 +2189,73 @@ for i in range(1,11):
 plt.plot(range(1,11),inertia_scores</pre>
 <p/>
  <div class="image_">
+                                                        <img src="img/news/inertia_score2plot.png" alt="" class="center" />
+                                                    </div>
+</p>
+ <p>According to the curve, I feel it's number 5. we can still confirm if we have chosen the right number of clusters by 
+  a validating measure called Silhouette Score</p>
+ <div class="description">
+                                                    <h3>Silhouette Score</h3>
+                                                    </p>
+<p>Silhouette Score is the distance from the centroid to the object and the lesser the score 
+ the more validating our number of clusters is.</p>
+<pre>score = silhouette_score(clusters, clustering1.labels_, metric=’euclidean’)
+print(score)</pre>
+</p>
+ <div class="image_">
                                                         <img src="img/news/score.png" alt="" class="center" />
                                                     </div>
 </p>
+<div class="description">
+                                                    <h3>Bivariate Clustering</h3>
+                                                    </p>
+                                                </div>
+<p>Moving forward from univariate clustering now I would be clustering “Annual Income” with “Spending Score” 
+ as well, here’s how I have done it.</p>
+<pre>clustering2=KMeans(5)
+clustering2.fit(a[['Annual_Income_inThousandUSD','Spending_Score']])
+clusters["cluster_pred2"]=clustering2.labels_
+clusters.head()</pre>
+</p>
+<div class="image_">
+                                                        <img src="img/clastering2.png" alt="" class="center" />
+                                                    </div>
+</p>
+<p>I have given the value of K as 5 because I already checked inertia which even more explicitly
+ tells that after 5 the inertia curve changes barely.</p>
+<p>inertia_score2=[]
+for i in range(1,11):
+    kmeans2=KMeans(n_clusters=i)
+    kmeans2.fit(a[['Annual_Income_inThousandUSD','Spending_Score']])
+    inertia_score2.append(kmeans2.inertia_)
+plt.plot(range(1,11),inertia_score2)</pre>
+<p>
+<div class="image_">
+                                                        <img src="img/inertia_score2plot.png" alt="" class="center" />
+                                                    </div>
+</p> 
+<div class="description">
+                                                    <h3>Exploring Centroids</h3>
+                                                    </p>
+                                                </div>
+<p>I checked one more parameter for clusters which is centroid and here is how I did it.</p>
+<pre>centers=pd.DataFrame(clustering2.cluster_centers_)
+centers.columns=['x','y']</pre>
+</p>
+<pre>plt.figure(figsize=(8,6))
+plt.scatter(x=centers['x'],y=centers['y'],s=50,c='black',marker='*')
+sns.scatterplot(data=clusters,x='Annual_Income_inThousandUSD', y='Spending_Score', hue='cluster_pred2',palette='tab10')</pre>
+</p>
+
+
+
+
+
+
+
+
+
+
 
 
                                                  <div class="image_">
