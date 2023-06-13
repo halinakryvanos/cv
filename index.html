@@ -2170,6 +2170,29 @@ plt.show()</pre>
                                           the smaller the inertia value, but there is a trade-off here, we need a certain number of clusters that are 
                                           evenly grouped based on their behavior, so we will find the number K of clusters manually using the elbow method.</p>
                                                 </div>
+ <div class="description">
+                                                    <h3>Elbow technique</h3>
+                                                    </p>
+                                                </div>
+ <p>The trickiest part of using the k-means algorithm is more conceptual than it is technical—you need to come up with a reasonable number of clusters to group your data in. 
+  While you could simply follow a trial-and-error approach, this is time consuming and error prone. Instead, you’ll use what’s called the elbow technique. 
+  The optimal number of clusters shouldn’t be too many (otherwise, there won’t be much difference between them), while also not being too 
+  few (otherwise, you won’t get enough granularity). What the elbow technique does, then, is show you the breaking point, or “elbow,”
+  at which adding more clusters won’t help better explain the variances in your data.</p> 
+ <p>To employ the elbow technique, start by defining a range of potential numbers of clusters that could be found in the data. In this scenario,
+  let’s say between one and ten:</p>    
+<pre>inertia_scores=[]
+for i in range(1,11):
+    kmeans=KMeans(n_clusters=i)
+    kmeans.fit(a)
+    inertia_scores.append(kmeans.inertia_)
+plt.plot(range(1,11),inertia_scores</pre>
+ <div class="image_">
+                                                        <img src="img/news/score.png" alt="" class="center" />
+                                                    </div>
+
+
+
                                                  <div class="image_">
                                                         <img src="img/news/4-1.jpg" alt="" class="center" />
                                                     </div>
